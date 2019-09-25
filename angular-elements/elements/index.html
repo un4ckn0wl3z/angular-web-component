@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Widgets</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <my-widget></my-widget>
+  <hr>
+  <input id="inputNum" type="text">
+  <button id="myNum">Set number</button>
+  <script src="my-widget.js"></script>
+  <script>
+    const btn = document.getElementById('myNum');
+    btn.addEventListener('click', (event) => {
+      const input = document.getElementById('inputNum');
+      widget.number = input.value;
+    })
+    const widget = document.querySelector('my-widget');
+    widget.addEventListener('change', (event) => {
+      console.log(event.detail);
+    })
+  </script>
+</body>
+</html>
